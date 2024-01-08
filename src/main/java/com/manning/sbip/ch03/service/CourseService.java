@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.manning.sbip.ch03.model.Course;
@@ -12,8 +13,7 @@ import com.manning.sbip.ch03.repository.CourseRepository;
 
 
 
-@Service
-//@Transactional
+@Component
 public class CourseService {
 	
 	 private final CourseRepository courseRepository;
@@ -41,47 +41,47 @@ public class CourseService {
         courseRepository.save(kurs2);
     }
 	
-	public void udalitPoId(long id) {
-		
-		
-	
-		 courseRepository.deleteById(id);
-		
-	}
-	
-	public boolean  naitiPoId(long id) {
-		
-		
-		
-		return courseRepository.existsById(id);
-		 
-		 
-		  
-	}
-	
-       public void  vernutVse() {
-		
-		
-    	   Iterable<Course> products = courseRepository.findAll();
-           products.forEach((p) -> {
-               System.out.println(p.getName());
-           });
-		 	 
-		  
-	}
-       
-       public List<Course> getAllStudents() {
-   		List<Course> courseResponse = (List<Course>) courseRepository.findAll();
-   		return courseResponse;
-   	}
-       
-        public void vernutPoId(Iterable<Long> id) {
-        List<Course> employees = (List<Course>) courseRepository.findAllById(id);
-
-         employees.forEach((employee) -> {
-           System.out.println(employee.getId());
-       });
-        }
+//	public void udalitPoId(long id) {
+//		
+//		
+//	
+//		 courseRepository.deleteById(id);
+//		
+//	}
+//	
+//	public boolean  naitiPoId(long id) {
+//		
+//		
+//		
+//		return courseRepository.existsById(id);
+//		 
+//		 
+//		  
+//	}
+//	
+//       public void  vernutVse() {
+//		
+//		
+//    	   Iterable<Course> products = courseRepository.findAll();
+//           products.forEach((p) -> {
+//               System.out.println(p.getName());
+//           });
+//		 	 
+//		  
+//	}
+//       
+//       public List<Course> getAllStudents() {
+//   		List<Course> courseResponse = (List<Course>) courseRepository.findAll();
+//   		return courseResponse;
+//   	}
+//       
+//        public void vernutPoId(Iterable<Long> id) {
+//        List<Course> employees = (List<Course>) courseRepository.findAllById(id);
+//
+//         employees.forEach((employee) -> {
+//           System.out.println(employee.getId());
+//       });
+//        }
 }
 	
 	

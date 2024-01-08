@@ -10,29 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.manning.sbip.ch03.model.Course;
 import com.manning.sbip.ch03.repository.CourseRepository;
+import com.manning.sbip.ch03.service.CourseService;
 
 @RestController
-@RequestMapping("/courses")
-class CourseController {
+@RequestMapping("/coffees")
+public class CourseController {
+	
 	private final CourseRepository courseRepository;
 
 	public CourseController(CourseRepository courseRepository) {
 		this.courseRepository = courseRepository;
 	}
-
-	@GetMapping
-	Iterable<Course> getCoffees() {
-		return courseRepository.findAll();
-	}
-	
-	@GetMapping
-	 public List<Course> getAllStudents() {
-	   		List<Course> courseResponse = (List<Course>) courseRepository.findAll();
-	   		return courseResponse;
-	   	}
-	
-	@GetMapping("/{id}")
-	Optional<Course> getCourseById(@PathVariable long id) {
-		return courseRepository.findById(id);
-	}
+  
+     	@GetMapping
+    	Iterable<Course> getCoffees() {
+    		return courseRepository.findAll();
+     	}
 }

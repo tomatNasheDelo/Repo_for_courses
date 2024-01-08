@@ -28,7 +28,7 @@ public class CourseTrackerSpringBootApplication {
 	 //   long id1 = 1;
 	//   List<Long> ids = Arrays.asList(4L, 2L, 3L);
        return args -> {
-    	     long id1 = 5; 
+    	    // long id1 = 5; 
     	  //    boolean bul = courseService.naitiPoId(id1);
     	   
                 System.out.println("\nInsert course  2   ...");
